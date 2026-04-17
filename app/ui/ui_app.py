@@ -111,7 +111,7 @@ class SpeedChallengerApp(ctk.CTk):
 
         self.max_label = ctk.CTkLabel(
             self.left_frame,
-            text="YOUR MAX SPEED: 0.0 km/h",
+            text="YOUR MAX SPEED: 0.0 %",
             font=("Arial", 20, "italic")
         )
         self.max_label.pack(pady=5)
@@ -210,7 +210,7 @@ class SpeedChallengerApp(ctk.CTk):
             self.session.stop()
             self.timer_label.configure(text="FINISH!", text_color="#FF3D00")
             self.max_label.configure(
-                text=f"YOUR MAX: {self.session.max_speed:.1f} km/h"
+                text=f"YOUR MAX: {self.session.max_speed:.1f} %"
             )
 
     def read_uart(self):
@@ -236,7 +236,7 @@ class SpeedChallengerApp(ctk.CTk):
         self.session.update(val)
 
         self.max_label.configure(
-            text=f"RECORD: {self.session.max_speed:.1f} km/h"
+            text=f"RECORD: {self.session.max_speed:.1f} %"
         )
 
     def save(self):
@@ -269,7 +269,7 @@ class SpeedChallengerApp(ctk.CTk):
 
             row = ctk.CTkLabel(
                 self.scrollable_leaderboard,
-                text=f"{i + 1}. {entry['name']} - {entry['speed']:.1f} km/h",
+                text=f"{i + 1}. {entry['name']} - {entry['speed']:.1f} %",
                 font=("Arial", 16),
                 text_color=color
             )

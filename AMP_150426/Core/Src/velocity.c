@@ -112,7 +112,7 @@ int threshold(uint16_t buffer[],int size){
     for(int i=0; i< size; i++){
         float z_score= (buffer[i]-mean_val)/std_dev_val;
 
-        if(z_score>=8 ){
+        if(z_score>=90.0 ){
             return 1;
         }
     }

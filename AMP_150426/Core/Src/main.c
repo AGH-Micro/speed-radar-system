@@ -162,12 +162,12 @@ int main(void)
 			  time_measurement2 = HAL_GetTick();
 			  if (time_measurement2 - time_measurement1 > 500  ) {
 				  time_measurement3 = time_measurement2 - time_measurement1;
-//				  speed = (3.6*100000*distance)/(time_measurement3*12);
-				  speed = (3.6 * 1000 * distance) / time_measurement3;
+				  speed = (3.6*100000*distance)/(time_measurement3*12)-20;
+//				  speed = (3.6 * 1000 * distance) / time_measurement3;
 				  char msg[32];
 				  sprintf(msg, "%.1f\r\n", speed);
 				  HAL_UART_Transmit(&huart5, (uint8_t*)msg, strlen(msg), 10);
-				  speed_table[blaszka_serio] = speed;
+				  //speed_table[blaszka_serio] = speed;
 				  blaszka_serio++;
 				  flag = 1;
 			  }
